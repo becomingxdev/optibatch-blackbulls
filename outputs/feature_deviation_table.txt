@@ -1,0 +1,12 @@
+TOP DEVIATING FEATURES IN LOW-PERFORMING BATCHES
+==============================================
+Pressure_Bar_mean              | 11.10 SD
+Humidity_Percent_min           | 8.33 SD
+Lubricant_Conc                 | 7.09 SD
+Drying_Time                    | 6.18 SD
+Friability                     | 6.08 SD
+Friability_inv                 | 6.08 SD
+Machine_Speed                  | 5.29 SD
+Compression_Force              | 5.13 SD
+Binder_Amount                  | 4.78 SD
+Granulation_Time               | 4.71 SD
