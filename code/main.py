@@ -7,7 +7,7 @@ import pandas as pd
 # Ensure imports resolve from code/ root regardless of working directory
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
-from config import DEFAULT_WEIGHTS, OUTPUT_DIR
+from config import DEFAULT_WEIGHTS, RAW_DATA_DIR
 from data.loader import load_production_data, load_process_data
 from data.cleaner import fill_missing_with_median, remove_outliers_iqr
 from data.feature_engineering import generate_process_features
@@ -47,11 +47,11 @@ def run_pipeline() -> None:
         golden_mean, golden_std = generate_golden_signature(df)
 
         # ── 6. Save outputs ───────────────────────────────────────────────────
-        os.makedirs(OUTPUT_DIR, exist_ok=True)
+        os.makedirs(RAW_DATA_DIR, exist_ok=True)
 
-        scored_path = os.path.join(OUTPUT_DIR, "scored_batches.csv")
-        mean_path   = os.path.join(OUTPUT_DIR, "golden_signature_mean.csv")
-        std_path    = os.path.join(OUTPUT_DIR, "golden_signature_std.csv")
+        scored_path = os.path.join(RAW_DATA_DIR, "scored_batches.csv")
+        mean_path   = os.path.join(RAW_DATA_DIR, "golden_signature_mean.csv")
+        std_path    = os.path.join(RAW_DATA_DIR, "golden_signature_std.csv")
 
         df.to_csv(scored_path, index=False)
         golden_mean.to_csv(mean_path)
@@ -60,7 +60,7 @@ def run_pipeline() -> None:
         print(
             f"\n✅ Pipeline complete.\n"
             f"   Batches scored  : {len(df)}\n"
-            f"   Outputs saved to: {OUTPUT_DIR}\n"
+            f"   Outputs saved to: {RAW_DATA_DIR}\n"
             f"     • scored_batches.csv\n"
             f"     • golden_signature_mean.csv\n"
             f"     • golden_signature_std.csv"

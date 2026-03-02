@@ -3,13 +3,13 @@
 import os
 import pandas as pd
 import numpy as np
-from config import OUTPUT_DIR
+from config import RAW_DATA_DIR, ADVANCED_ANALYSIS_DIR
 
 def run_advanced_analysis():
     # ── 1. Load Data ──────────────────────────────────────────────────────────
-    scored_path = os.path.join(OUTPUT_DIR, "scored_batches.csv")
-    mean_path = os.path.join(OUTPUT_DIR, "golden_signature_mean.csv")
-    std_path = os.path.join(OUTPUT_DIR, "golden_signature_std.csv")
+    scored_path = os.path.join(RAW_DATA_DIR, "scored_batches.csv")
+    mean_path = os.path.join(RAW_DATA_DIR, "golden_signature_mean.csv")
+    std_path = os.path.join(RAW_DATA_DIR, "golden_signature_std.csv")
 
     if not all(os.path.exists(p) for p in [scored_path, mean_path, std_path]):
         print("Error: Required output files for analysis not found.")
@@ -52,12 +52,13 @@ def run_advanced_analysis():
     z_score_df = z_score_df.sort_values(by="refined_score", ascending=False)
     
     # ── 6. Save Detailed Output ───────────────────────────────────────────────
-    analysis_output_path = os.path.join(OUTPUT_DIR, "batch_advanced_analysis.csv")
+    os.makedirs(ADVANCED_ANALYSIS_DIR, exist_ok=True)
+    analysis_output_path = os.path.join(ADVANCED_ANALYSIS_DIR, "batch_advanced_analysis.csv")
     z_score_df.to_csv(analysis_output_path, index=False)
     
     # ── 7. Generate Summary Statistics ────────────────────────────────────────
     summary_stats = z_score_df[["refined_score", "max_z_score", "composite_score"]].describe()
-    summary_path = os.path.join(OUTPUT_DIR, "analysis_summary_stats.csv")
+    summary_path = os.path.join(ADVANCED_ANALYSIS_DIR, "analysis_summary_stats.csv")
     summary_stats.to_csv(summary_path)
 
     # ── 8. Heatmap Data (Top Deviating Features for Low Performers) ───────────
@@ -74,7 +75,7 @@ def run_advanced_analysis():
         print(f"   • {feat.replace('z_', ''):<25}: Avg Deviation {val:.2f} SD")
 
     # Save Heatmap info as text table
-    heatmap_path = os.path.join(OUTPUT_DIR, "feature_deviation_table.txt")
+    heatmap_path = os.path.join(ADVANCED_ANALYSIS_DIR, "feature_deviation_table.txt")
     with open(heatmap_path, "w") as f:
         f.write("TOP DEVIATING FEATURES IN LOW-PERFORMING BATCHES\n")
         f.write("==============================================\n")

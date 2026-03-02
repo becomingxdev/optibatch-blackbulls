@@ -34,16 +34,16 @@ import matplotlib.ticker   as mticker
 warnings.filterwarnings("ignore")
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from config import OUTPUT_DIR
+from config import RAW_DATA_DIR, PARETO_DIR, ADVANCED_ANALYSIS_DIR, MONITORING_DIR
 
 # ── Paths ─────────────────────────────────────────────────────────────────────
-ALERTS_CSV    = os.path.join(OUTPUT_DIR, "batch_monitoring_alerts.csv")
-SCORED_CSV    = os.path.join(OUTPUT_DIR, "scored_batches.csv")
-PARETO_CSV    = os.path.join(OUTPUT_DIR, "golden_signature_pareto.csv")
-ADV_CSV       = os.path.join(OUTPUT_DIR, "batch_advanced_analysis.csv")
-DASH_OUT      = os.path.join(OUTPUT_DIR, "predictive_dashboard.png")
-ACTION_CSV    = os.path.join(OUTPUT_DIR, "predictive_alerts_with_actions.csv")
-REPORT_OUT    = os.path.join(OUTPUT_DIR, "root_cause_report.txt")
+ALERTS_CSV    = os.path.join(MONITORING_DIR, "batch_monitoring_alerts.csv")
+SCORED_CSV    = os.path.join(RAW_DATA_DIR, "scored_batches.csv")
+PARETO_CSV    = os.path.join(PARETO_DIR, "golden_signature_pareto.csv")
+ADV_CSV       = os.path.join(ADVANCED_ANALYSIS_DIR, "batch_advanced_analysis.csv")
+DASH_OUT      = os.path.join(MONITORING_DIR, "predictive_dashboard.png")
+ACTION_CSV    = os.path.join(MONITORING_DIR, "predictive_alerts_with_actions.csv")
+REPORT_OUT    = os.path.join(MONITORING_DIR, "root_cause_report.txt")
 
 # ── Style constants ────────────────────────────────────────────────────────────
 BG        = "#080b14"
@@ -531,7 +531,7 @@ def _write_root_cause_report(alerts: pd.DataFrame, freq: pd.Series,
 
 # ─────────────────────────────────────────────────────────────────────────────
 def run_predictive_dashboard() -> None:
-    os.makedirs(OUTPUT_DIR, exist_ok=True)
+    os.makedirs(MONITORING_DIR, exist_ok=True)
 
     alerts, scored = _load()
     freq           = _feature_frequency(alerts)

@@ -1,6 +1,6 @@
 ════════════════════════════════════════════════════════════════════
   OPTIBATCH ROOT-CAUSE & PREDICTIVE TREND REPORT
-  Generated : 2026-03-02 12:24:06
+  Generated : 2026-03-02 12:44:27
 ════════════════════════════════════════════════════════════════════
   Batches analysed  : 56
   Anomalous batches : 55 (98%)
@@ -51,6 +51,6 @@
     If HIGH: Reduce tablet press RPM to target range
     If LOW: Increase tablet press RPM to target range
 ════════════════════════════════════════════════════════════════════
-  Full action CSV saved to : A:\Hackathons\IITHyderabad\optibatch-blackbulls\outputs\predictive_alerts_with_actions.csv
-  Dashboard saved to       : A:\Hackathons\IITHyderabad\optibatch-blackbulls\outputs\predictive_dashboard.png
+  Full action CSV saved to : A:\Hackathons\IITHyderabad\optibatch-blackbulls\outputs\monitoring\predictive_alerts_with_actions.csv
+  Dashboard saved to       : A:\Hackathons\IITHyderabad\optibatch-blackbulls\outputs\monitoring\predictive_dashboard.png
 ════════════════════════════════════════════════════════════════════

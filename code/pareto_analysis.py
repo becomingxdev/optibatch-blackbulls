@@ -20,15 +20,15 @@ import matplotlib.ticker as mticker
 warnings.filterwarnings("ignore")
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from config import OUTPUT_DIR
+from config import RAW_DATA_DIR, ADVANCED_ANALYSIS_DIR, PARETO_DIR
 
 # ── Constants ──────────────────────────────────────────────────────────────────
-ANALYSIS_CSV   = os.path.join(OUTPUT_DIR, "batch_advanced_analysis.csv")
-MEAN_CSV       = os.path.join(OUTPUT_DIR, "golden_signature_mean.csv")
-STD_CSV        = os.path.join(OUTPUT_DIR, "golden_signature_std.csv")
-RANKED_OUT     = os.path.join(OUTPUT_DIR, "pareto_feature_ranking.csv")
-PARETO_SIG_OUT = os.path.join(OUTPUT_DIR, "golden_signature_pareto.csv")
-CHART_OUT      = os.path.join(OUTPUT_DIR, "pareto_chart.png")
+ANALYSIS_CSV   = os.path.join(ADVANCED_ANALYSIS_DIR, "batch_advanced_analysis.csv")
+MEAN_CSV       = os.path.join(RAW_DATA_DIR, "golden_signature_mean.csv")
+STD_CSV        = os.path.join(RAW_DATA_DIR, "golden_signature_std.csv")
+RANKED_OUT     = os.path.join(PARETO_DIR, "pareto_feature_ranking.csv")
+PARETO_SIG_OUT = os.path.join(PARETO_DIR, "golden_signature_pareto.csv")
+CHART_OUT      = os.path.join(PARETO_DIR, "pareto_chart.png")
 
 # Score/meta columns that are NOT raw features
 _EXCLUDE_COLS: set[str] = {
@@ -215,7 +215,7 @@ def _draw_pareto_chart(ranked: pd.DataFrame) -> None:
 # ─────────────────────────────────────────────────────────────────────────────
 def run_pareto_analysis() -> None:
     """Entry point: run full Pareto golden-signature analysis and save outputs."""
-    os.makedirs(OUTPUT_DIR, exist_ok=True)
+    os.makedirs(PARETO_DIR, exist_ok=True)
 
     # 1. Load
     df, golden_mean, golden_std = _load_data()
@@ -263,7 +263,7 @@ def run_pareto_analysis() -> None:
             f"{row['total_abs_z']:>8.1f}  {row['cumulative_pct']:>6.1f}%{flag}"
         )
     print("═" * 58)
-    print(f"\n  Outputs saved to: {OUTPUT_DIR}")
+    print(f"\n  Outputs saved to: {PARETO_DIR}")
     print(f"    • pareto_feature_ranking.csv")
     print(f"    • golden_signature_pareto.csv")
     print(f"    • pareto_chart.png")

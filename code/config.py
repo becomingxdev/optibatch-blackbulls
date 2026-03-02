@@ -7,6 +7,13 @@ BASE_DIR   = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DATA_DIR   = os.path.join(BASE_DIR, "dataset")
 OUTPUT_DIR = os.path.join(BASE_DIR, "outputs")
 
+# Subdirectories for organized outputs
+RAW_DATA_DIR          = os.path.join(OUTPUT_DIR, "raw_batches")
+ADVANCED_ANALYSIS_DIR = os.path.join(OUTPUT_DIR, "advanced_analysis")
+PARETO_DIR           = os.path.join(OUTPUT_DIR, "pareto_analysis")
+MONITORING_DIR       = os.path.join(OUTPUT_DIR, "monitoring")
+ML_MODELS_DIR        = os.path.join(OUTPUT_DIR, "ml_models")
+
 # Dataset paths (exact filenames on disk)
 PRODUCTION_FILE = os.path.join(DATA_DIR, "_h_batch_production_data.xlsx")
 PROCESS_FILE    = os.path.join(DATA_DIR, "_h_batch_process_data.xlsx")

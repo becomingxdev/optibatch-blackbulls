@@ -1,6 +1,6 @@
 ════════════════════════════════════════════════════════════════
   REAL-TIME BATCH MONITORING REPORT
-  Generated: 2026-03-02 12:16:33
+  Generated: 2026-03-02 12:44:24
 ════════════════════════════════════════════════════════════════
   Total batches evaluated : 56
   Anomalous batches        : 55  (98%)
@@ -557,7 +557,7 @@
          Disintegration_Time
     Direction: Lubricant_Conc:HIGH; Friability_inv:LOW; Friability:HIGH; Drying_Time:HIGH; Mach…
 ════════════════════════════════════════════════════════════════
-  Outputs saved to: A:\Hackathons\IITHyderabad\optibatch-blackbulls\outputs
+  Outputs saved to: A:\Hackathons\IITHyderabad\optibatch-blackbulls\outputs\monitoring
     • batch_monitoring_alerts.csv
     • batch_deviation_heatmap.png
     • monitoring_report.txt

@@ -26,14 +26,14 @@ from matplotlib.patheffects import withStroke
 warnings.filterwarnings("ignore")
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from config import OUTPUT_DIR
+from config import RAW_DATA_DIR, PARETO_DIR, MONITORING_DIR
 
 # ── File paths ────────────────────────────────────────────────────────────────
-SCORED_CSV      = os.path.join(OUTPUT_DIR, "scored_batches.csv")
-PARETO_SIG_CSV  = os.path.join(OUTPUT_DIR, "golden_signature_pareto.csv")
-ALERT_OUT       = os.path.join(OUTPUT_DIR, "batch_monitoring_alerts.csv")
-HEATMAP_OUT     = os.path.join(OUTPUT_DIR, "batch_deviation_heatmap.png")
-REPORT_OUT      = os.path.join(OUTPUT_DIR, "monitoring_report.txt")
+SCORED_CSV      = os.path.join(RAW_DATA_DIR, "scored_batches.csv")
+PARETO_SIG_CSV  = os.path.join(PARETO_DIR, "golden_signature_pareto.csv")
+ALERT_OUT       = os.path.join(MONITORING_DIR, "batch_monitoring_alerts.csv")
+HEATMAP_OUT     = os.path.join(MONITORING_DIR, "batch_deviation_heatmap.png")
+REPORT_OUT      = os.path.join(MONITORING_DIR, "monitoring_report.txt")
 
 # ── Constants ──────────────────────────────────────────────────────────────────
 ANOMALY_THRESHOLD = 1          # any feature out-of-range → anomaly
@@ -313,7 +313,7 @@ def _write_report(results: pd.DataFrame, crit_features: list[str]) -> None:
 
     lines += [
         sep,
-        f"  Outputs saved to: {OUTPUT_DIR}",
+        f"  Outputs saved to: {MONITORING_DIR}",
         f"    • batch_monitoring_alerts.csv",
         f"    • batch_deviation_heatmap.png",
         f"    • monitoring_report.txt",
@@ -330,7 +330,7 @@ def _write_report(results: pd.DataFrame, crit_features: list[str]) -> None:
 # ─────────────────────────────────────────────────────────────────────────────
 def run_batch_monitor() -> None:
     """Main entry point."""
-    os.makedirs(OUTPUT_DIR, exist_ok=True)
+    os.makedirs(MONITORING_DIR, exist_ok=True)
 
     # 1. Load
     df, pareto = _load_inputs()
