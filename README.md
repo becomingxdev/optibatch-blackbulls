@@ -3,7 +3,7 @@
 ![OptiBatch Banner](C:\Users\desai\.gemini\antigravity\brain\0060821a-8e03-4685-8d2f-f4c74a9d335e\optibatch_banner_1772438659655.png)
 
 # 🚀 OptiBatch: Next-Gen Factory Optimization
-**BlackBulls | IITHyderabad Hackathon Project**
+**BlackBulls**
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Python 3.9+](https://img.shields.io/badge/python-3.9+-blue.svg)](https://www.python.org/downloads/)
