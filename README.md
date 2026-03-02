@@ -79,11 +79,11 @@ python code/main.py
 ### 3. Launch Dashboards
 Explore operational insights:
 ```bash
-streamlit run code/ops_dashboard.py
+python code/ops_dashboard.py
 ```
 Explore predictive modeling & SHAP:
 ```bash
-streamlit run code/predictive_dashboard.py
+python code/predictive_dashboard.py
 ```
 
 ---
