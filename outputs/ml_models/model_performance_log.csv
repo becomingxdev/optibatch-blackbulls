@@ -1,0 +1,2 @@
+timestamp,trigger,RMSE,MAE,R2,Accuracy,F1,Precision,Recall,acc_flag,r2_flag
+2026-03-02 12:59:12,scheduled_run,101.303,81.022,0.7126,0.8,0.7598,0.7301,0.8,✅ OK,✅ OK

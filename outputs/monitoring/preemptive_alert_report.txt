@@ -1,0 +1,123 @@
+══════════════════════════════════════════════════════════════════════
+  OPTIBATCH — PREEMPTIVE ALERT REPORT
+  Generated: 2026-03-02 12:58:54
+══════════════════════════════════════════════════════════════════════
+  Total alerts generated : 45
+    🔴 CRITICAL (HIGH)  : 41
+    🟡 WARNING (MEDIUM) : 4
+══════════════════════════════════════════════════════════════════════
+  TOP PREDICTED HIGH-RISK BATCHES
+──────────────────────────────────────────────────────────────────────
+
+  ► T012  |  Actual: HIGH  |  Pred: HIGH  |  DevScore: 417.9
+    Actions: [Disintegration_Time_delta|LOW] Reduce disintegrant
+            level; check coating integrity |
+            [Compression_Force_kN_mean_delta|LOW] Increase compression
+            force setpoint by 5–10 kN |
+            [Humidity_Percent_min_delta|LOW] Increase HVAC humidity
+            setpoint; add humidifier feed | [Tablet_Weight_delta|LOW]
+            Increase fill cam depth; check hopper feed rate |
+            [Friability_delta|HIGH] Increase compression force; review
+            binder concentration
+
+  ► T013  |  Actual: HIGH  |  Pred: HIGH  |  DevScore: 210.88
+    Actions: [Disintegration_Time_delta|LOW] Reduce disintegrant
+            level; check coating integrity |
+            [Compression_Force_kN_mean_delta|HIGH] Reduce compression
+            force setpoint by 5–10 kN |
+            [Humidity_Percent_min_delta|LOW] Increase HVAC humidity
+            setpoint; add humidifier feed | [Tablet_Weight_delta|LOW]
+            Increase fill cam depth; check hopper feed rate |
+            [Friability_delta|HIGH] Increase compression force; review
+            binder concentration
+
+  ► T014  |  Actual: HIGH  |  Pred: HIGH  |  DevScore: 622.45
+    Actions: [Disintegration_Time_delta|LOW] Reduce disintegrant
+            level; check coating integrity |
+            [Compression_Force_kN_mean_delta|LOW] Increase compression
+            force setpoint by 5–10 kN |
+            [Humidity_Percent_min_delta|LOW] Increase HVAC humidity
+            setpoint; add humidifier feed | [Tablet_Weight_delta|HIGH]
+            Adjust fill depth cam on tablet press |
+            [Friability_delta|HIGH] Increase compression force; review
+            binder concentration
+
+  ► T016  |  Actual: HIGH  |  Pred: HIGH  |  DevScore: 264.09
+    Actions: [Disintegration_Time_delta|LOW] Reduce disintegrant
+            level; check coating integrity |
+            [Compression_Force_kN_mean_delta|HIGH] Reduce compression
+            force setpoint by 5–10 kN |
+            [Humidity_Percent_min_delta|LOW] Increase HVAC humidity
+            setpoint; add humidifier feed | [Tablet_Weight_delta|LOW]
+            Increase fill cam depth; check hopper feed rate |
+            [Friability_delta|HIGH] Increase compression force; review
+            binder concentration
+
+  ► T017  |  Actual: HIGH  |  Pred: HIGH  |  DevScore: 235.97
+    Actions: [Disintegration_Time_delta|LOW] Reduce disintegrant
+            level; check coating integrity |
+            [Compression_Force_kN_mean_delta|LOW] Increase compression
+            force setpoint by 5–10 kN |
+            [Humidity_Percent_min_delta|HIGH] Lower HVAC humidity
+            setpoint; increase desiccant capacity |
+            [Tablet_Weight_delta|LOW] Increase fill cam depth; check
+            hopper feed rate | [Friability_delta|HIGH] Increase
+            compression force; review binder concentration
+
+  ► T018  |  Actual: HIGH  |  Pred: HIGH  |  DevScore: 508.04
+    Actions: [Disintegration_Time_delta|LOW] Reduce disintegrant
+            level; check coating integrity |
+            [Compression_Force_kN_mean_delta|LOW] Increase compression
+            force setpoint by 5–10 kN |
+            [Humidity_Percent_min_delta|LOW] Increase HVAC humidity
+            setpoint; add humidifier feed | [Tablet_Weight_delta|HIGH]
+            Adjust fill depth cam on tablet press |
+            [Friability_delta|HIGH] Increase compression force; review
+            binder concentration
+
+  ► T019  |  Actual: HIGH  |  Pred: HIGH  |  DevScore: 328.56
+    Actions: [Disintegration_Time_delta|LOW] Reduce disintegrant
+            level; check coating integrity |
+            [Compression_Force_kN_mean_delta|HIGH] Reduce compression
+            force setpoint by 5–10 kN |
+            [Humidity_Percent_min_delta|LOW] Increase HVAC humidity
+            setpoint; add humidifier feed | [Tablet_Weight_delta|LOW]
+            Increase fill cam depth; check hopper feed rate |
+            [Friability_delta|HIGH] Increase compression force; review
+            binder concentration
+
+  ► T020  |  Actual: MEDIUM  |  Pred: HIGH  |  DevScore: 10.74
+    Actions: [Disintegration_Time_delta|HIGH] Increase
+            superdisintegrant level; review granule porosity |
+            [Compression_Force_kN_mean_delta|HIGH] Reduce compression
+            force setpoint by 5–10 kN |
+            [Humidity_Percent_min_delta|HIGH] Lower HVAC humidity
+            setpoint; increase desiccant capacity |
+            [Tablet_Weight_delta|HIGH] Adjust fill depth cam on tablet
+            press | [Friability_delta|HIGH] Increase compression
+            force; review binder concentration
+
+  ► T021  |  Actual: HIGH  |  Pred: HIGH  |  DevScore: 298.52
+    Actions: [Disintegration_Time_delta|LOW] Reduce disintegrant
+            level; check coating integrity |
+            [Compression_Force_kN_mean_delta|HIGH] Reduce compression
+            force setpoint by 5–10 kN |
+            [Humidity_Percent_min_delta|LOW] Increase HVAC humidity
+            setpoint; add humidifier feed | [Tablet_Weight_delta|LOW]
+            Increase fill cam depth; check hopper feed rate |
+            [Friability_delta|HIGH] Increase compression force; review
+            binder concentration
+
+  ► T022  |  Actual: HIGH  |  Pred: HIGH  |  DevScore: 152.43
+    Actions: [Disintegration_Time_delta|HIGH] Increase
+            superdisintegrant level; review granule porosity |
+            [Compression_Force_kN_mean_delta|HIGH] Reduce compression
+            force setpoint by 5–10 kN |
+            [Humidity_Percent_min_delta|HIGH] Lower HVAC humidity
+            setpoint; increase desiccant capacity |
+            [Tablet_Weight_delta|HIGH] Adjust fill depth cam on tablet
+            press | [Friability_delta|HIGH] Increase compression
+            force; review binder concentration
+══════════════════════════════════════════════════════════════════════
+  Full alert CSV: A:\Hackathons\IITHyderabad\optibatch-blackbulls\outputs\monitoring\preemptive_alerts.csv
+══════════════════════════════════════════════════════════════════════
