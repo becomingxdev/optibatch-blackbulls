@@ -1,0 +1,56 @@
+════════════════════════════════════════════════════════════════════
+  OPTIBATCH ROOT-CAUSE & PREDICTIVE TREND REPORT
+  Generated : 2026-03-02 12:24:06
+════════════════════════════════════════════════════════════════════
+  Batches analysed  : 56
+  Anomalous batches : 55 (98%)
+  Predicted next batch risk : 274.8  →  severity FORECAST = MEDIUM
+════════════════════════════════════════════════════════════════════
+  TOP RECURRING DEVIATION DRIVERS
+────────────────────────────────────────────────────────────────────
+  Rank  Feature                           Batches OOR   % of all
+────────────────────────────────────────────────────────────────────
+  1     Pressure_Bar_mean                          48      85.7%
+  2     Lubricant_Conc                             43      76.8%
+  3     Machine_Speed                              42      75.0%
+  4     Drying_Time                                42      75.0%
+  5     Granulation_Time                           41      73.2%
+  6     Dissolution_Rate                           41      73.2%
+  7     Disintegration_Time                        41      73.2%
+  8     Compression_Force                          40      71.4%
+  9     Friability_inv                             40      71.4%
+  10    Friability                                 40      71.4%
+  11    Compression_Force_kN_std                   40      71.4%
+  12    Binder_Amount                              39      69.6%
+  13    Hardness                                   39      69.6%
+  14    Content_Uniformity                         39      69.6%
+  15    Drying_Temp                                39      69.6%
+════════════════════════════════════════════════════════════════════
+  CONSISTENT DEVIATION PATTERNS DETECTED
+────────────────────────────────────────────────────────────────────
+  ► Systemic issues (OOR in >80% of anomalous batches):
+
+    • Pressure_Bar_mean  [LOW in 48 batches]
+      Recommendation: Increase line pressure — inspect pump output and seals
+════════════════════════════════════════════════════════════════════
+  PREDICTIVE ALERTS — NEXT BATCH
+────────────────────────────────────────────────────────────────────
+  Forecast deviation score  : 274.8
+  Forecast severity         : MEDIUM
+  Pre-emptive actions to take BEFORE next batch run:
+
+  [Pressure_Bar_mean]
+    If HIGH: Reduce line pressure — check upstream regulator valve
+    If LOW: Increase line pressure — inspect pump output and seals
+
+  [Lubricant_Conc]
+    If HIGH: Reduce lubricant dosing rate — recalibrate dispensing pump
+    If LOW: Increase lubricant dosing rate — check pump blockage
+
+  [Machine_Speed]
+    If HIGH: Reduce tablet press RPM to target range
+    If LOW: Increase tablet press RPM to target range
+════════════════════════════════════════════════════════════════════
+  Full action CSV saved to : A:\Hackathons\IITHyderabad\optibatch-blackbulls\outputs\predictive_alerts_with_actions.csv
+  Dashboard saved to       : A:\Hackathons\IITHyderabad\optibatch-blackbulls\outputs\predictive_dashboard.png
+════════════════════════════════════════════════════════════════════
