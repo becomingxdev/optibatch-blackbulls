@@ -1,0 +1,73 @@
+══════════════════════════════════════════════════════════════════════
+  OPTIBATCH — ADVANCED ENSEMBLE ML REPORT
+  Generated : 2026-03-02 13:15:18
+══════════════════════════════════════════════════════════════════════
+  MODELS USED
+──────────────────────────────────────────────────────────────────────
+  Base 1 : Gradient Boosting Classifier  (n=400, depth=4, lr=0.05)
+  Base 2 : XGBoost Classifier             (n=400, depth=5, lr=0.05)
+  Base 3 : LightGBM Classifier            (n=400, depth=5, lr=0.05)
+  Meta   : Logistic Regression (class_weight=balanced)
+  Imbalance  : Per-fold SMOTE + class_weight=balanced + synthetic augmentation
+  Validation : Rolling-window expanding CV (time-aware)
+══════════════════════════════════════════════════════════════════════
+  REGRESSION METRICS  (predict deviation score)
+──────────────────────────────────────────────────────────────────────
+  RMSE  = 61.75
+  MAE   = 50.69
+  R²    = 0.8965
+══════════════════════════════════════════════════════════════════════
+  CLASSIFICATION METRICS  (predict severity class)
+──────────────────────────────────────────────────────────────────────
+  Accuracy  = 93.02%  ✅ TARGET MET (>92%)
+  Precision = 94.88%  (weighted avg)
+  Recall    = 93.02%  (weighted avg)
+  F1 Score  = 93.14%  (weighted avg)
+══════════════════════════════════════════════════════════════════════
+  PER-CLASS REPORT
+──────────────────────────────────────────────────────────────────────
+              precision    recall  f1-score   support
+
+         LOW       0.60      1.00      0.75         3
+      MEDIUM       1.00      0.67      0.80         6
+        HIGH       0.97      0.97      0.97        34
+
+    accuracy                           0.93        43
+   macro avg       0.86      0.88      0.84        43
+weighted avg       0.95      0.93      0.93        43
+
+══════════════════════════════════════════════════════════════════════
+  TOP 15 FEATURES (avg of GB + XGBoost + LightGBM)
+──────────────────────────────────────────────────────────────────────
+  Rank  Feature                                        GB      XGB      LGB      Avg
+──────────────────────────────────────────────────────────────────────
+  1     Humidity_Percent_max_rstd                  0.1321   0.0313 191.0000  63.7212
+  2     Humidity_Percent_std_delta                 0.0019   0.0042 136.0000  45.3353
+  3     Flow_Rate_LPM_mean                         0.0037   0.0156 106.0000  35.3398
+  4     Lubricant_Conc_ratio                       0.0302   0.0592  99.0000  33.0298
+  5     Lubricant_Conc_zscore                      0.1399   0.0483  90.0000  30.0628
+  6     dev_delta                                  0.0000   0.0026  83.0000  27.6675
+  7     Pressure_Bar_std_rstd                      0.0008   0.0104  72.0000  24.0037
+  8     Tablet_Weight_delta2                       0.0000   0.0016  58.0000  19.3339
+  9     Hardness                                   0.0001   0.0454  56.0000  18.6818
+  10    comp_delta                                 0.0024   0.0103  50.0000  16.6709
+  11    Humidity_Percent_min_zscore                0.1010   0.0464  48.0000  16.0492
+  12    Friability                                 0.0109   0.0054  47.0000  15.6721
+  13    Hardness_ratio                             0.0003   0.0013  46.0000  15.3339
+  14    Humidity_Percent_min_rstd                  0.0005   0.0033  45.0000  15.0013
+  15    Humidity_Percent_std_zscore                0.0001   0.0054  43.0000  14.3352
+══════════════════════════════════════════════════════════════════════
+  NEXT-BATCH FORECAST
+──────────────────────────────────────────────────────────────────────
+  Predicted deviation score : 132.44
+  Predicted severity class  : MEDIUM
+  P(HIGH      ) = 2.1%
+  P(LOW       ) = 19.4%
+  P(MEDIUM    ) = 78.5%
+══════════════════════════════════════════════════════════════════════
+  Outputs saved to: A:\Hackathons\IITHyderabad\optibatch-blackbulls\outputs\ml_models
+    • adv_predictions.csv
+    • adv_feature_importance.csv
+    • adv_ml_dashboard.png
+    • adv_ml_report.txt
+══════════════════════════════════════════════════════════════════════
