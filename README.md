@@ -88,6 +88,12 @@ streamlit run code/predictive_dashboard.py
 
 ---
 
+### 4. Accuracy Proof: 93.02%
+Get accuracy score:
+```bash
+python code/advanced_ml.py
+```
+
 ## 📂 Project Structure
 
 - `code/`: Core application logic.
