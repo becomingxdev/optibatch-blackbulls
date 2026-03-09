@@ -1,0 +1,62 @@
+{
+    "yield_model": {
+        "model_name": "yield_model.pkl",
+        "algorithm": "Stacked Regressor (XGB+LGBM+GB -> Ridge)",
+        "training_samples": 25,
+        "features_used": [
+            "temperature",
+            "pressure"
+        ],
+        "rmse": 0.011570029859338998,
+        "mae": 0.00997259579653966,
+        "mape": 1.0387916457108906,
+        "accuracy": 98.96120835428911,
+        "f1_score": 1.0,
+        "training_timestamp": "2026-03-09T13:27:38.220537"
+    },
+    "quality_model": {
+        "model_name": "quality_model.pkl",
+        "algorithm": "Stacked Regressor (XGB+LGBM+GB -> Ridge)",
+        "training_samples": 25,
+        "features_used": [
+            "temperature",
+            "pressure"
+        ],
+        "rmse": 0.034718163206827475,
+        "mae": 0.030229476275989004,
+        "mape": 0.030741519967052183,
+        "accuracy": 99.96925848003295,
+        "f1_score": 1.0,
+        "training_timestamp": "2026-03-09T13:27:39.095768"
+    },
+    "performance_model": {
+        "model_name": "performance_model.pkl",
+        "algorithm": "Stacked Regressor (XGB+LGBM+GB -> Ridge)",
+        "training_samples": 25,
+        "features_used": [
+            "temperature",
+            "pressure"
+        ],
+        "rmse": 0.06330907784350788,
+        "mae": 0.05512027077668391,
+        "mape": 4.892245507241086,
+        "accuracy": 95.10775449275891,
+        "f1_score": 1.0,
+        "training_timestamp": "2026-03-09T13:27:39.952136"
+    },
+    "energy_model": {
+        "model_name": "energy_model.pkl",
+        "algorithm": "Stacked Regressor (XGB+LGBM+GB -> Ridge)",
+        "training_samples": 25,
+        "features_used": [
+            "temperature",
+            "pressure"
+        ],
+        "rmse": 1.869306579985635,
+        "mae": 1.3124212899045442,
+        "mape": 0.8022821448935111,
+        "accuracy": 99.19771785510649,
+        "f1_score": 1.0,
+        "training_timestamp": "2026-03-09T13:27:40.902916"
+    }
+}

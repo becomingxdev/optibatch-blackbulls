@@ -1,0 +1,84 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom Glassmorphism Panels */
+.glass-panel {
+  background: rgba(15, 23, 42, 0.4); /* Made more transparent */
+  backdrop-filter: blur(12px); /* Slightly less blur so particles shine through more */
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.08); /* Slightly stronger border to define edges */
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+}
+
+/* ── Recharts: remove default white SVG background ── */
+.recharts-wrapper,
+.recharts-surface {
+  background: transparent !important;
+}
+
+/* Remove white hover cursor rectangle in BarChart */
+.recharts-rectangle.recharts-bar-background-rectangle {
+  fill: rgba(255, 255, 255, 0.04) !important;
+}
+
+/* Target the internal SVG background rect Recharts injects */
+.recharts-cartesian-grid ~ rect,
+.recharts-surface > g > rect:first-child {
+  fill: transparent !important;
+}
+
+/* Chart plot area & grid */
+.recharts-plot-area,
+.recharts-cartesian-grid {
+  background: transparent !important;
+}
+
+.recharts-legend-wrapper {
+  padding-top: 8px !important;
+}
+
+@layer components {
+  /* High-Tech Custom Slider */
+  .custom-slider {
+    @apply appearance-none w-full h-1.5 rounded-full outline-none;
+    /* Uses CSS variable --val set from React to fill track */
+    background: linear-gradient(to right, #2dd4bf var(--val, 50%), #1e293b var(--val, 50%)) !important;
+    box-shadow: inset 0 1px 3px rgba(0,0,0,0.5) !important;
+  }
+
+  .custom-slider::-webkit-slider-runnable-track {
+    @apply w-full h-1.5 rounded-full cursor-pointer;
+    background: transparent;
+  }
+
+  /* Chrome & Safari Thumb */
+  .custom-slider::-webkit-slider-thumb {
+    @apply appearance-none w-4 h-4 rounded-full cursor-pointer transition-transform duration-100;
+    margin-top: -5px;
+    background: #2dd4bf !important; 
+    border: 3px solid rgba(15, 23, 42, 0.4) !important; /* Semi-transparent border like the image */
+    box-shadow: 0 0 0 3px rgba(45, 212, 191, 0.2), 0 0 12px rgba(45, 212, 191, 0.6) !important; /* The glowing outer ring effect */
+  }
+
+  .custom-slider::-webkit-slider-thumb:hover {
+    transform: scale(1.3) !important;
+  }
+
+  /* Firefox */
+  .custom-slider::-moz-range-track {
+    @apply w-full h-1.5 rounded-full cursor-pointer;
+    background: transparent;
+  }
+  
+  .custom-slider::-moz-range-thumb {
+    @apply w-4 h-4 rounded-full cursor-pointer transition-transform duration-100;
+    background: #2dd4bf !important;
+    border: 3px solid rgba(15, 23, 42, 0.4) !important;
+    box-shadow: 0 0 0 3px rgba(45, 212, 191, 0.2), 0 0 12px rgba(45, 212, 191, 0.6) !important;
+  }
+
+  .custom-slider::-moz-range-thumb:hover {
+    transform: scale(1.3) !important;
+  }
+}
