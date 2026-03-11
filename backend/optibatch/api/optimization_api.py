@@ -16,10 +16,10 @@ class OptimizationRequest(BaseModel):
     # Supports both:
     # - { "batch_parameters": {...}, "predicted_metrics": {...} } (canonical)
     # - { "batchParameters": {...}, "predictedMetrics": {...} } (frontend/legacy)
-    batch_parameters: Optional[Dict[str, float]] = None
-    predicted_metrics: Optional[Dict[str, float]] = None
-    batchParameters: Optional[Dict[str, float]] = None
-    predictedMetrics: Optional[Dict[str, float]] = None
+    batch_parameters: Optional[Dict[str, Any]] = None
+    predicted_metrics: Optional[Dict[str,Any ]] = None
+    batchParameters: Optional[Dict[str, Any]] = None
+    predictedMetrics: Optional[Dict[str, Any]] = None
 
     class Config:
         extra = "allow"
@@ -64,9 +64,20 @@ def optimize(request: OptimizationRequest):
         raise HTTPException(status_code=422, detail="Missing batch_parameters")
 
     predicted_metrics = predicted_metrics or {}
-
+    
+    cleaned_parameters = {}
+    for key, value in batch_parameters.items():
+        if isinstance(value, (int, float)):
+            cleaned_parameters[key] = float(value)
+        elif isinstance(value, str):
+            try:
+                # Try to convert strings that are actually numbers (like "85.5")
+                cleaned_parameters[key] = float(value)
+            except ValueError:
+                # If it's a word like "balanced", we safely ignore it
+              pass
     try:
-        report = optimize_batch_parameters(batch_parameters, predicted_metrics)
+        report = optimize_batch_parameters(cleaned_parameters, predicted_metrics)
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"Optimization engine error: {e}")
 
