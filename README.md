@@ -89,7 +89,7 @@ OptiBatch leverages a highly modular backend architecture designed for scalabili
 
 2. **Start the Streamlit application**:
    ```bash
-   streamlit run app.py
+   python scripts/run_api.py
    ```
 
 ---
