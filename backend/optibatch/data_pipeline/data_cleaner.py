@@ -19,15 +19,19 @@ def clean_batch_data(df: pd.DataFrame) -> pd.DataFrame:
     df_clean = df.copy()
 
     # Remove duplicate rows
-    df_clean.drop_duplicates(inplace=True)
+    df_clean = df_clean.drop_duplicates()
 
     # Convert incorrect datatypes / Ensure numeric
-    # Let's try to infer numeric objects
     for col in df_clean.columns:
-        if df_clean[col].dtype == 'object':
+        # Check if column is not already numeric
+        if not pd.api.types.is_numeric_dtype(df_clean[col]):
             try:
-                # Try converting to numeric
-                df_clean[col] = pd.to_numeric(df_clean[col], errors='ignore')
+                # Try converting to numeric (coerce turns errors into NaN)
+                temp_numeric = pd.to_numeric(df_clean[col], errors='coerce')
+                # Only keep the conversion if it successfully converted at least one value 
+                # (and the column wasn't already entirely empty)
+                if temp_numeric.notnull().any():
+                    df_clean[col] = temp_numeric
             except Exception:
                 pass
 
@@ -36,7 +40,7 @@ def clean_batch_data(df: pd.DataFrame) -> pd.DataFrame:
         if pd.api.types.is_numeric_dtype(df_clean[col]):
             # Fill missing with median
             if df_clean[col].isnull().any():
-                df_clean[col].fillna(df_clean[col].median(), inplace=True)
+                df_clean[col] = df_clean[col].fillna(df_clean[col].median())
             
             # Detect and clip extreme outliers using IQR method
             Q1 = df_clean[col].quantile(0.25)
@@ -50,7 +54,8 @@ def clean_batch_data(df: pd.DataFrame) -> pd.DataFrame:
         else:
             # Fill missing with mode for categorical
             if df_clean[col].isnull().any():
-                mode_val = df_clean[col].mode()[0]
-                df_clean[col].fillna(mode_val, inplace=True)
+                mode_res = df_clean[col].mode()
+                if not mode_res.empty:
+                    df_clean[col] = df_clean[col].fillna(mode_res[0])
                 
     return df_clean
